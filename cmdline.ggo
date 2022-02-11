@@ -1,0 +1,22 @@
+version "0.0.1"
+package "airsensor2mqtt"
+purpose "aisensor2mqtt will read VOC values from a connected VOC Stick (REHAU ans similar) and will post that data to a mqtt server.
+
+By Markus Reschka <markus@reschka.com>"
+
+# Options
+option "debug" d "Turn debug output on" flag off
+option "verbose" v "Turn on output of data to stdout" flag off
+option "wait-time" t "Number of seconds between polling data from sensor" optional int default="10"
+option "one-read" 1 "Read One value and then exit" flag off
+option "save-config" s "Take all the options from here and save to the given config file" optional string
+option "load-config" l "Load options from file" optional string
+
+option "mqtt-server" m "mqtt broker address" optional string default="127.0.0.1"
+option "mqtt-server-port" o "mqtt broker port" optional int default="1883" typestr="portnumber"
+option "mqtt-password" p "mqtt broker password" optional string dependon="mqtt-username"
+option "mqtt-username" u "mqtt broker username" optional string dependon="mqtt-password"
+option "mqtt-qos-setting" q "mqtt qos setting" optional int default="0"
+option "mqtt-no-retain" r "disable mqtt retain" flag off
+option "mqtt-base-name" b "base topic for mqtt" optional string default="voc"
+option "sensor-name" n "sensor name. used as mqtt client id and as name for this sensor for connected topic" optional string default="voc_1"
