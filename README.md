@@ -45,3 +45,14 @@ By Markus Reschka <markus@reschka.com>
                                   (default=`voc_1')
 
 ```
+
+#authors
+
+##airsensor2mqtt.c
+Markus Reschka https://github.com/mreschka/airsensor2mqtt
+
+##Idea from:
+        Rodric Yates http://code.google.com/p/airsensor-linux-usb/
+        Ap15e (MiOS) http://wiki.micasaverde.com/index.php/CO2_Sensor
+        Sebastian Sjoholm, sebastian.sjoholm@gmail.com
+        FHEM Module CO2 https://svn.fhem.de/trac/browser/trunk/fhem/FHEM/38_CO20.pm
