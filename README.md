@@ -46,6 +46,10 @@ By Markus Reschka <markus@reschka.com>
 
 ```
 
+# help wanted
+
+If you have any ideas or would like to implement set commands, e.g. for setting warning levels or tirgger heating / zero offset and so on please help and create pull requested. It be more than happy to integrate it!
+
 # authors
 
 ## airsensor2mqtt.c
