@@ -69,16 +69,16 @@ int main(int argc, char* argv[])
 	} else {
 		openlog("airsensor2mqtt", LOG_CONS | LOG_PID | LOG_NDELAY, LOG_USER);
 	}
-	syslog(LOG_MAKEPRI(LOG_USER, LOG_NOTICE), "NOTICE: Program started by User %d", getuid());
-
 	//chose log level
 	setlogmask(LOG_UPTO(LOG_NOTICE));
+
 	if (args_info.debug_given) {
 		setlogmask(LOG_UPTO(LOG_DEBUG));
 	}
 	else if (args_info.verbose_given) {
 		setlogmask(LOG_UPTO(LOG_INFO));
 	}
+	syslog(LOG_MAKEPRI(LOG_USER, LOG_NOTICE), "NOTICE: Program started by User %d", getuid());
 	syslog(LOG_MAKEPRI(LOG_USER, LOG_DEBUG), "DEBUG: Debug messages active");
 
 	//check whether we shall export a config file
@@ -162,7 +162,7 @@ void save_config_file()
 		//remove load and save flag - we don't export those to a file
 		args_info.save_config_given = 0;
 		args_info.load_config_given = 0;
-		
+
 		//save config
 		ret = cmdline_parser_file_save(args_info.save_config_arg, &args_info);
 
